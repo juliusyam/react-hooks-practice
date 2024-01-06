@@ -1,7 +1,8 @@
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css';
 import { useCounter } from './hooks';
+import { Button, Divider, Flex, Image, Typography } from 'antd';
+import { ThemeProvider } from './theme';
 
 function App() {
 
@@ -9,35 +10,32 @@ function App() {
   const [count, { increment, decrement, reset }] = useCounter(initialValue);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+    <ThemeProvider>
+      <Flex justify="left" align="center">
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <Image src={ reactLogo } className="logo react" alt="React logo" width="30" height="30" />
         </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={ decrement }>
-          Decrement
-        </button>
-        <h2>count is { count }</h2>
-        <button onClick={ increment }>
-          Increment
-        </button>
-        <button onClick={ reset } disabled={ count == initialValue }>
-          Reset
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <Typography.Title level={ 3 }>React Hooks Practice</Typography.Title>
+      </Flex>
+
+      <Divider />
+
+      <Flex gap="middle" justify="center" align="center" vertical>
+        <Typography.Title level={ 2 }>useCounter</Typography.Title>
+        <Flex justify="center" align="center" gap="middle">
+          <Button onClick={ decrement } type="primary">
+            Decrement
+          </Button>
+          <Typography.Title level={ 3 }>Count: { count }</Typography.Title>
+          <Button onClick={ increment } type="primary">
+            Increment
+          </Button>
+          <Button onClick={ reset } disabled={ count == initialValue } type="default">
+            Reset
+          </Button>
+        </Flex>
+      </Flex>
+    </ThemeProvider>
   )
 }
 
