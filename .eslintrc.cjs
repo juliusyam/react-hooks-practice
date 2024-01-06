@@ -14,5 +14,19 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'indent': [
+      'error',
+      2,
+      {
+        'SwitchCase': 1,
+        'ignoredNodes': [
+          'JSXElement *',
+          'JSXElement'
+        ]
+      }
+    ],
+    'object-curly-spacing': ['error', 'always'],
+    'template-curly-spacing': ['error', 'always'],
+    'quotes': ['error', 'single'],
   },
 }

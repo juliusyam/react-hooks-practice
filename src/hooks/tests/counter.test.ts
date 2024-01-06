@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
-import {renderHook} from "@testing-library/react";
-import {useCounter} from "../counter";
+import { renderHook } from '@testing-library/react';
+import { useCounter } from '../counter';
 
 describe('useCounter', () => {
 
