@@ -13,6 +13,9 @@ const theme: ThemeConfig = {
       colorBgContainerDisabled: '#839c99',
       colorTextDisabled: '#3c5956',
     },
+    Input: {
+      colorBgContainer: '#67595E',
+    }
   }
 };
 
