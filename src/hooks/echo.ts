@@ -38,22 +38,16 @@ export function useEcho(userResponse: UserResponse | null) {
         console.log(e.flight);
         // Update the latest event in state
         setNewFlightEvent(e.flight);
-        setUpdatedFlightEvent(null);
-        setDeletedFlightEvent(null);
       })
       .listen('FlightUpdated', (e: FlightResponse) => {
         console.log(e.flight);
         // Update the latest event in state
         setUpdatedFlightEvent(e.flight);
-        setNewFlightEvent(null);
-        setDeletedFlightEvent(null);
       })
       .listen('FlightDeleted', (e: FlightResponse) => {
         console.log(e.flight);
         // Update the latest event in state
         setDeletedFlightEvent(e.flight);
-        setNewFlightEvent(null);
-        setUpdatedFlightEvent(null);
       });
 
     return () => {
@@ -71,24 +65,18 @@ export function useEcho(userResponse: UserResponse | null) {
         .listen('NewFlightAdded', (e: FlightResponse) => {
           console.log('Private channel', e.flight);
           setNewPrivateFlightEvent(e.flight);
-          setUpdatedPrivateFlightEvent(null);
-          setDeletedPrivateFlightEvent(null);
         });
 
         const flightUpdatedPrivateChannel = echo.private(`flights-private.${ userResponse.user.id }`)
         .listen('FlightUpdated', (e: FlightResponse) => {
           console.log('Private channel', e.flight);
           setUpdatedPrivateFlightEvent(e.flight);
-          setNewPrivateFlightEvent(null);
-          setDeletedPrivateFlightEvent(null);
         });
 
         const flightDeletedPrivateChannel = echo.private(`flights-private.${ userResponse.user.id }`)
         .listen('FlightDeleted', (e: FlightResponse) => {
           console.log('Private channel', e.flight);
           setDeletedPrivateFlightEvent(e.flight);
-          setNewPrivateFlightEvent(null);
-          setUpdatedPrivateFlightEvent(null);
         });
 
       return () => {

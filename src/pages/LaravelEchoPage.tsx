@@ -66,7 +66,7 @@ export function LaravelEchoPage() {
 
       <Typography.Title level={ 2 }>Latest Flight Events (Public)</Typography.Title>
 
-      { newFlightEvent && !updatedFlightEvent && !deletedFlightEvent && (
+      { newFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>New Flight</Typography.Title>
           <p>New flight added, flight number { newFlightEvent.flight_number }, id = { newFlightEvent.id }</p>
@@ -75,7 +75,7 @@ export function LaravelEchoPage() {
 
       <br/>
 
-      { updatedFlightEvent && !newFlightEvent && !deletedFlightEvent && (
+      { updatedFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>Updated Flight</Typography.Title>
           <p>Flight updated, flight number { updatedFlightEvent.flight_number }, id = { updatedFlightEvent.id }</p>
@@ -84,7 +84,7 @@ export function LaravelEchoPage() {
 
       <br/>
 
-      { deletedFlightEvent && !newFlightEvent && !updatedFlightEvent && (
+      { deletedFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>Deleted Flight</Typography.Title>
           <p>Flight deleted, flight id = { deletedFlightEvent.id }</p>
@@ -95,7 +95,7 @@ export function LaravelEchoPage() {
 
       <Typography.Title level={ 2 }>Latest Flight Events (Private)</Typography.Title>
 
-      { newPrivateFlightEvent && !updatedPrivateFlightEvent && !deletedPrivateFlightEvent && (
+      { newPrivateFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>New Flight</Typography.Title>
           <p>New flight added, flight number { newPrivateFlightEvent.flight_number }, id = { newPrivateFlightEvent.id }</p>
@@ -104,7 +104,7 @@ export function LaravelEchoPage() {
 
       <br/>
 
-      { updatedPrivateFlightEvent && !newPrivateFlightEvent && !deletedPrivateFlightEvent && (
+      { updatedPrivateFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>Updated Flight</Typography.Title>
           <p>Flight updated, flight number { updatedPrivateFlightEvent.flight_number }, id = { updatedPrivateFlightEvent.id }</p>
@@ -113,7 +113,7 @@ export function LaravelEchoPage() {
 
       <br/>
 
-      { deletedPrivateFlightEvent && !newPrivateFlightEvent && !updatedPrivateFlightEvent && (
+      { deletedPrivateFlightEvent && (
         <div>
           <Typography.Title level={ 4 }>Deleted Flight</Typography.Title>
           <p>Flight deleted, flight number { deletedPrivateFlightEvent.flight_number }, id = { deletedPrivateFlightEvent.id }</p>
