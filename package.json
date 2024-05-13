@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "20.9.0",
+    "node": "20.12.1",
     "yarn": "1.22.19"
   },
   "scripts": {
@@ -16,8 +16,12 @@
   },
   "dependencies": {
     "antd": "5.12.8",
+    "axios": "^1.6.8",
+    "laravel-echo": "^1.16.1",
+    "pusher-js": "^8.4.0-rc2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
     "@babel/preset-env": "7.23.7",
